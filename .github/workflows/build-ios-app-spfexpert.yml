@@ -68,7 +68,7 @@ jobs:
           -archivePath $RUNNER_TEMP/iamgroot.xcarchive \
           -sdk iphoneos \
           -configuration Debug \
-          -allowProvisioningUpdates
+          -allowProvisioningUpdates \
           -destination generic/platform=iOS \
           clean archive          
 

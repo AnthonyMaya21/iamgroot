@@ -18,6 +18,7 @@ jobs:
       # GitHub shares this online, e.g. https://github.com/actions/runner-images/blob/macOS-12/20230224.1/images/macos/macos-12-Readme.md
       - name: check Xcode version
         run: /usr/bin/xcodebuild -version
+      
 
       - name: checkout repository
         uses: actions/checkout@v3
@@ -57,6 +58,7 @@ jobs:
           -archivePath $RUNNER_TEMP/iamgroot.xcarchive \
           -sdk iphoneos \
           -configuration Debug \
+          -allowProvisioningUpdates
           -destination generic/platform=iOS \
           clean archive          
 

@@ -5,7 +5,7 @@ on:
   # manual trigger but change to any supported event
   # see addl: https://www.andrewhoog.com/post/how-to-build-react-native-android-app-with-github-actions/#3-run-build-workflow
   push:
-    # Inidica las ramas del repositorio que desencadenarán el flujo de trabajo.
+    # 
     branches:
       - main
       - test

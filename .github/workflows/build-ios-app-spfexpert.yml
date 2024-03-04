@@ -54,7 +54,14 @@ jobs:
       - name: Set up Apple credentials
         run: |
           echo ${{ secrets.APPLE_ID }} > apple_id.txt# Ejecuta otros comandos necesarios para configurar tus credenciales
-
+      - name: Configure Developer Accounts
+        run: |
+          echo "machine api.apple.com" >> ~/.netrc
+          echo "  login $APPLE_ID" >> ~/.netrc
+          echo "  password $APPLE_ID_PASSWORD" >> ~/.netrc
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
       - name: build archive
         run: |
           xcodebuild -scheme "I am Groot" \
